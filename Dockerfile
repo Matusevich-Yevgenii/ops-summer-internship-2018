@@ -12,4 +12,8 @@ COPY uwsgi.ini $APP
 
 COPY nginx.conf /etc/nginx/conf.d/nginx.conf
 
+COPY logrotate/* /etc/logrotate.d/
+
+RUN chmod 644 /etc/logrotate.d/*
+
 EXPOSE 80
