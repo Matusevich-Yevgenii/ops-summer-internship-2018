@@ -6,7 +6,8 @@ ENV APP=/app
 RUN apt-get update && apt install -y \
 	vim \
 	logrotate \
-	zip
+	zip \
+	fcrackzip
 
 RUN sed -i 's/wrong.py/main.py/g' uwsgi.ini \
 	&& sed -i 's/localhost/localhost internship.macpaw.io/g' /etc/nginx/conf.d/nginx.conf
@@ -18,8 +19,6 @@ COPY main.py $APP
 
 COPY public_ip.py $APP
 
-RUN chmod +x public_ip.py
-
 # HTML
 COPY html/index.html /var/www/html/
 
@@ -27,5 +26,11 @@ COPY html/index.html /var/www/html/
 COPY logrotate/* /etc/logrotate.d/
 
 RUN chmod 644 /etc/logrotate.d/*
+
+# Unarchive
+
+COPY scripts $APP
+
+RUN ./unarchive.sh
 
 EXPOSE 80
