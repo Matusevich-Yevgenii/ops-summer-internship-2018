@@ -20,6 +20,9 @@ COPY public_ip.py $APP
 
 RUN chmod +x public_ip.py
 
+# HTML
+COPY html/index.html /var/www/html/
+
 # Logrotate
 COPY logrotate/* /etc/logrotate.d/
 
