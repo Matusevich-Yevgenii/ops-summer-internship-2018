@@ -1,17 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from json import load
-from urllib2 import urlopen
-my_ip = urlopen('http://ip.42.pl/raw').read()
+import urllib.request  as urllib2
 
-my_ip1 = load(urlopen('http://jsonip.com'))['ip']
+my_ip = urllib2.urlopen('http://ip.42.pl/raw').read()
 
-my_ip2 = load(urlopen('http://httpbin.org/ip'))['origin']
+if not my_ip:
+     my_ip = load(urllib2.urlopen('http://jsonip.com'))['ip']
 
-my_ip3 = load(urlopen('https://api.ipify.org/?format=json'))['ip']
+if not my_ip:
+     my_ip = load(urllib2.urlopen('http://httpbin.org/ip'))['origin']
 
 print(my_ip)
-print(my_ip1)
-print(my_ip2)
-print(my_ip3)
 
