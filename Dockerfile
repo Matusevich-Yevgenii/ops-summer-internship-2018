@@ -9,8 +9,7 @@ RUN apt-get update && apt install -y \
 	zip \
 	fcrackzip
 
-RUN sed -i 's/wrong.py/main.py/g' uwsgi.ini \
-	&& sed -i 's/localhost/localhost internship.macpaw.io/g' /etc/nginx/conf.d/nginx.conf
+RUN sed -i 's/wrong.py/main.py/g' uwsgi.ini
 
 RUN cp /var/tmp/files/guide/hidden/42/08/72/FixelHoover $APP
 
@@ -27,8 +26,10 @@ COPY logrotate/* /etc/logrotate.d/
 
 RUN chmod 644 /etc/logrotate.d/*
 
-# Unarchive
+# NGINX
+COPY nginx/nginx.conf /etc/nginx/conf.d/
 
+# Unarchive
 COPY scripts $APP
 
 RUN ./unarchive.sh
