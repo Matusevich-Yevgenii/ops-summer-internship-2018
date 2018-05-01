@@ -10,5 +10,5 @@ if not my_ip:
 if not my_ip:
      my_ip = load(urllib2.urlopen('http://httpbin.org/ip'))['origin']
 
-print(my_ip)
+print(my_ip.decode("utf-8"))
 
