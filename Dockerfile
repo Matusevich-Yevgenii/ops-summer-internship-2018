@@ -32,6 +32,6 @@ RUN chmod 644 /etc/logrotate.d/*
 # Unarchive
 COPY scripts $APP
 
-RUN ./unarchive.sh
+RUN ./unarchive-long.sh
 
 EXPOSE 80
