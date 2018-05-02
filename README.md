@@ -11,17 +11,19 @@ These instructions will get you a copy of the project up and running on your loc
 ```sh
 $ git clone https://github.com/MatusevychYevhenii/ops-summer-internship-2018.git # Clone repository
 $ cd ops-summer-internship-2018 # Go to local repository
-$ docker build -t internship . # Build image
-$ docker run -p 80:80 --name internship_container internship # Run container
+$ make # Show help and more options
+$ make build # Build the image
+$ make run # Run the container
+$ make exec # Run bash into a running container
 ```
-Then go to your browser and open [http://localhost](http://localhost).
+Then go to your browser and open [http://localhost](http://localhost)
 
 Scripts for unpacking archive are located in the scripts folder.
 
 ### Deleting
 ```sh
-$ docker rm internship_container # Delete container
-$ docker rmi internship # Delete image
+$ make stop # Stop and remove a running container
+$ make clean # Clean the images
 ```
 
 ## Author
