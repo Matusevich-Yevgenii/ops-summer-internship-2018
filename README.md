@@ -1,6 +1,8 @@
 # ops-summer-internship-2018
 My solution of the task "ops-summer-internship-2018".
 
+All the tasks is done.
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.
 
