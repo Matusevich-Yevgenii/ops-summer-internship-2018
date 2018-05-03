@@ -8,6 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 * [Docker](https://www.docker.com/) - Container manager.
+* [GNU Make](https://www.gnu.org/software/make/) - Build automation tool.
 
 ### Installing
 ```sh
