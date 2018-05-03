@@ -1,4 +1,5 @@
-APP=internship
+APP=intern
+CONTAINER_EXISTS := $(shell docker ps -a | grep $(APP) | wc -l)
 
 default: help
 
@@ -24,7 +25,7 @@ exec: ## Run bash into a running container
 stop: ## Stop a running container
 	docker stop $(APP)
 
-clean: ## Clean the images
+clean: ## Clean the images and the container if exists
+	@if [ "$(CONTAINER_EXISTS)" = "1" ]; then docker stop $(APP); fi
 	docker rmi $(APP)
 	docker rmi macpaw/internship
-
