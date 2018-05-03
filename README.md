@@ -22,8 +22,7 @@ Scripts for unpacking archive are located in the scripts folder.
 
 ### Deleting
 ```sh
-$ make stop # Stop and remove a running container
-$ make clean # Clean the images
+$ make clean # Clean the images and the container if exists
 ```
 
 ## Author
