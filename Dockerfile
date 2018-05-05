@@ -5,11 +5,12 @@ ENV APP=/app
 WORKDIR $APP
 
 RUN apt-get update && apt install -y \
-	vim \
-	logrotate \
-	zip \
+        apt-utils \
+        vim \
+        logrotate \
+        zip \
         moreutils \
-	fcrackzip
+        fcrackzip
 
 RUN sed -i 's/wrong.py/main.py/g' uwsgi.ini \
 	&& sed -i 's/localhost/localhost internship.macpaw.io/g' /etc/nginx/conf.d/nginx.conf \
