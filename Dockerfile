@@ -2,6 +2,7 @@ FROM macpaw/internship
 
 # Basic set
 ENV APP=/app
+WORKDIR $APP
 
 RUN apt-get update && apt install -y \
 	vim \
@@ -17,9 +18,7 @@ RUN sed -i 's/wrong.py/main.py/g' uwsgi.ini \
 RUN cp /var/tmp/files/guide/hidden/42/08/72/FixelHoover $APP
 
 # Python
-COPY main.py $APP
-
-COPY public_ip.py $APP
+COPY app $APP
 
 # HTML
 COPY html/index.html /var/www/html/
