@@ -17,7 +17,7 @@ $ make run # Run the container
 $ make exec # Run bash into a running container
 ```
 
-Then go to your browser and open [localhost](http://localhost) or [internship.macpaw.io](http://internship.macpaw.io) on your host OS where you have run docker.
+Then go to your browser and open [localhost](http://localhost) or [internship.macpaw.io](http://internship.macpaw.io) on your host OS where you have run the docker container.
 
 Scripts for unpacking archive are located in the scripts folder.
 
