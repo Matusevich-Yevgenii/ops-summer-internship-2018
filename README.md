@@ -1,14 +1,11 @@
 # ops-summer-internship-2018
 My solution of the task "ops-summer-internship-2018".
 
-All the tasks is done.
-
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.
 
 ### Prerequisites
 * [Docker](https://www.docker.com/) - Container manager.
-* [GNU Make](https://www.gnu.org/software/make/) - Build automation tool.
 
 ### Installing
 ```sh
@@ -19,9 +16,12 @@ $ make build # Build the image
 $ make run # Run the container
 $ make exec # Run bash into a running container
 ```
-Then go to your browser and open [http://localhost](http://localhost)
+
+Then go to your browser and open [localhost](http://localhost) or [internship.macpaw.io](http://internship.macpaw.io) on your host OS where you have run docker.
 
 Scripts for unpacking archive are located in the scripts folder.
+
+Dockerfile is also can be used through custom docker commands.
 
 ### Deleting
 ```sh
